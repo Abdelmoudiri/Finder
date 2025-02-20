@@ -1,7 +1,7 @@
 @extends('layouts')
 @section('title','Ajouter Annonce')
 @section('content')
-
+hhhhhhhhhhh
     <div class="container mt-5">
         <h1 class="mb-4">Ajouter une annonce</h1>
         <form action="{{ route('addAnnonce.post') }}" method="POST">

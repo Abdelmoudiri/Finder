@@ -19,7 +19,7 @@ Route::post('/register',[AuthManager::class, 'registerPost'])->name('register.po
 Route::get('/logout',[AuthManager::class, 'logout'])->name('logout');
 
 Route::get('/ajouter-annonce',[AnnonceController::class, 'addAnnonce'])->name('addAnnonce');
-Route::post('/ajouter-annonce',[AnnonceController::class, 'addAnnoncePost'])->name('addAnnonce.post');
+Route::post('/ajouter-annonce',[AnnonceController::class, 'create'])->name('addAnnonce.post');
 Route::get('/Annoce',[AnnonceController::class, 'index'])->name('Annoce');
 
 

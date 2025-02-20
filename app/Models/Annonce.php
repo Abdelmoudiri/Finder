@@ -9,12 +9,10 @@ class Annonce extends Model
     //
     protected $table = 'annonces';
     protected $fillable = [
-        'title',
+        'titre',
         'description',
-        'user_id',
-        'category_id',
-        'price',
-        'image',
+        'date',
+        'lieu',
     ];
 
 

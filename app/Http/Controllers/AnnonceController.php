@@ -4,35 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\Annonce;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AnnonceController extends Controller
 {
     public function index(){
-        return view('annonce');
-    }
-    public function addAnnonce()
-    {
-        return view('ajouter_Annonce');
-
-    }
-    // app/Http/Controllers/AnnonceController.php
-namespace App\Http\Controllers;
-
-    use App\Models\Annonce;
-    use Illuminate\Http\Request;
-
-class AnnonceController extends Controller
-{
-    // Afficher le formulaire de création d'annonce
-    public function create()
-    {
-        return view('annonces.create');
+        $annonces = Annonce::all();
+        return view('home', compact('annonces'));
     }
 
-    // Enregistrer une nouvelle annonce
     public function store(Request $request)
     {
-        // Validation des données
         $request->validate([
             'titre' => 'required|string|max:255',
             'description' => 'required|string',
@@ -42,11 +24,15 @@ class AnnonceController extends Controller
         ]);
 
         // Créer une nouvelle annonce
-        Annonce::create($request->all());
+        Annonce::create([
+            'titre'=> $request->input('titre'),
+            'description'=> $request->input('description'),
+            'date'=> $request->input('date'),
+            'lieu'=> $request->input('lieu')
+        ]);
 
         // Rediriger vers la page d'accueil avec un message de succès
         return redirect()->route('home')->with('success', 'Annonce publiée avec succès !');
     }
 
-    //
 }

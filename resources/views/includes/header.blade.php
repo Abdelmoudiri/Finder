@@ -14,7 +14,7 @@
                     <a class="nav-link active" aria-current="page" href="">Annonces</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{route('addAnnonce')}}">Ajouter Annonce</a>
+                    <a class="nav-link active" aria-current="page" href="{{route('AddAnnonce')}}">Ajouter Annonce</a>
                 </li>
                 @auth
                     <li class="nav-item">

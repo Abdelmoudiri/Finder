@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnnonceController;
 use App\Http\Controllers\AuthManager;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -17,6 +18,9 @@ Route::post('/register',[AuthManager::class, 'registerPost'])->name('register.po
 
 Route::get('/logout',[AuthManager::class, 'logout'])->name('logout');
 
+Route::get('/ajouter-annonce',[AnnonceController::class, 'addAnnonce'])->name('addAnnonce');
+Route::post('/ajouter-annonce',[AnnonceController::class, 'addAnnoncePost'])->name('addAnnonce.post');
+Route::get('/Annoce',[AnnonceController::class, 'index'])->name('Annoce');
 
 
 Route::group(['middleware' => 'auth'], function () {

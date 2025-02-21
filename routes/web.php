@@ -3,6 +3,7 @@
 use App\Http\Controllers\AnnonceController;
 use App\Http\Controllers\AuthManager;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CommentController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -23,6 +24,10 @@ Route::post('/annonces',[AnnonceController::class, 'store'])->name('addAnnonce')
 Route::get('/annonce/{annonce}',[AnnonceController::class, 'getAnnonce'])->name('getAnnonceDetails');
 
 // add annonce page
+
+//comments
+Route::post('/annonces/{annonce}/comments', [CommentController::class, 'store'])->name('comments.store');
+Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/profile',[ProfileController::class,'index'])->name('profile');

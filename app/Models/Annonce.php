@@ -22,4 +22,8 @@ class Annonce extends Model
         return $this->belongsTo('App\Models\User');
     }
 
+    public function comments(){
+        return$this->belongsTo(Annonce::class);
+    }
+
 }

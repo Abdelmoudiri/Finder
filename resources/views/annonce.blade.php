@@ -4,7 +4,7 @@
 
     <div class="container mt-5">
         <h1 class="mb-4">Ajouter une annonce</h1>
-        <form action="{{ route('AddAnnonce.store') }}" method="POST">
+        <form action="{{ route('addAnnonce') }}" method="POST">
             @csrf <!-- Token de sécurité Laravel -->
             <div class="form-group">
                 <label for="titre">Titre</label>

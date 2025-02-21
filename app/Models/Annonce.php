@@ -13,7 +13,13 @@ class Annonce extends Model
         'description',
         'date',
         'lieu',
+        'type',
+        'user_id',
     ];
 
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
 
 }

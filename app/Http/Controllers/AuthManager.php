@@ -14,7 +14,7 @@ class AuthManager extends Controller
     {
         if(Auth::check())
         {
-            return redirect(route('home'));
+            return redirect(route('getAnnonce'));
         }
         return view('login');
 
@@ -30,7 +30,7 @@ class AuthManager extends Controller
         $credentials = $request->only('email', 'password');
         if(Auth::attempt($credentials))
         {
-            return redirect()->intended(route('home'));
+            return redirect()->intended(route('getAnnonce'));
         }
         return  redirect(route('login'))->with("error", "Invalid Credentials");
     }

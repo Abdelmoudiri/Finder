@@ -26,7 +26,7 @@ hhhhhhhhhhh
                 <label for="type">Type d'annonce</label>
                 <select class="form-control" id="type" name="type" required>
                     <option value="perdu">Perdu</option>
-                    <option value="trouvé">Trouvé</option>
+                    <option value="trouve">Trouvé</option>
                 </select>
             </div>
             <button type="submit" class="btn btn-primary">Publier l'annonce</button>

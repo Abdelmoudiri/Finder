@@ -17,9 +17,13 @@ class AnnonceController extends Controller
         return view('annonce');
     }
 
-    public function getAnnonce(Annonce $annonce){
-        return view('Annonce_Details', compact('annonce'));
-    }
+    
+    public function getAnnonce($id) 
+{
+    $annonces = Annonce::with(['user','comments.user'])->find($id);
+    // dd($comments->all());
+    return view('Annonce_Details', compact('annonces'));
+}
   
 
     public function store(Request $request)

@@ -37,7 +37,7 @@
     <h2 class="text-center mb-4">Recent Announcements</h2>
     <div class="row g-4">
         @foreach($annonces as $ann)
-        <a href="{{route("getAnnonceDetails",$ann)}}" class="col-md-4">
+        <a href="{{route("getAnnonceDetails",$ann->id)}}" class="col-md-4">
             <div class="card h-100 hover-shadow transition-all">
                 <div class="card-body">
                     <div class="d-flex justify-content-between mb-3">

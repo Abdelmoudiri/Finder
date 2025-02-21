@@ -23,7 +23,7 @@ class Annonce extends Model
     }
 
     public function comments(){
-        return$this->belongsTo(Annonce::class);
+        return$this->hasMany(Comment::class);
     }
 
 }
